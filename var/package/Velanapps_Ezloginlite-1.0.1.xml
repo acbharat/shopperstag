@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package>
+    <name>Velanapps_Ezloginlite</name>
+    <version>1.0.1</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/osl-3.0.php">Open Software License (OSL)</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Facebook Login Extension for Magento Stores.</summary>
+    <description>EzLogin Lite enables users of Magento web stores to login with Facebook social account.&#xD;
+Fetches customer profile from Facebook and displays them including the profile image.&#xD;
+Supports maximum basic templates in Magento.&#xD;
+Does not affect any default features of Magento store.</description>
+    <notes>EzLogin Lite Version - 1.0.1</notes>
+    <authors><author><name>VelanApps</name><user>VelanApps</user><email>social@velanapps.com</email></author></authors>
+    <date>2013-03-25</date>
+    <time>13:37:38</time>
+    <contents><target name="mageetc"><dir name="modules"><file name="Velanapps_Ezloginlite.xml" hash="24960e6469dbfc13f47210dee17f4452"/></dir></target><target name="magecommunity"><dir name="Velanapps"><dir name="Ezloginlite"><dir name="Block"><file name="Active.php" hash="c421a1cac0e71f9f9d80a69e42c4604c"/><file name="Data.php" hash="bc6bfa317841d691caecac52d874a5f5"/><file name="Rewrite.php" hash="177f8034d78c9e258180bfe08dcd8dc7"/></dir><dir name="Helper"><file name="Data.php" hash="2b5a0e0eb1fe75ec97673550baf64dff"/><file name="Rewrite.php" hash="0fad92af9c94945fe3ac8c257a93f939"/></dir><dir name="Model"><file name="Ezloginliteaccounts.php" hash="a969e67458216ab8b3cf2766509e4f6a"/><file name="Ezloginlitecustomers.php" hash="1d2e79a6610d6ebc3f56e830fd3f0bc8"/><dir name="Mysql4"><dir name="Ezloginliteaccounts"><file name="Collection.php" hash="d99b10e1ea71064633ae890853aefe70"/></dir><file name="Ezloginliteaccounts.php" hash="7f6cdebede7b007e2dc0b8070a146bd5"/><dir name="Ezloginlitecustomers"><file name="Collection.php" hash="a3d2f81eb384d436fe8a78eba62fa63b"/></dir><file name="Ezloginlitecustomers.php" hash="ab02df57c4d675d77089a779cd70c1ee"/></dir></dir><dir name="controllers"><file name="CustomerController.php" hash="6c724f80575248f0a7af87e103e5b9dc"/><file name="SocialController.php" hash="9ead42e380afe3876555726ddb75fbbd"/></dir><dir name="etc"><file name="adminhtml.xml" hash="1045b77db5abc87517dd95eaa693da3a"/><file name="config.xml" hash="45bff842b2b26fe91a92fcf0659be7d0"/><file name="system.xml" hash="2f0bf5e0831ac1633b1b3bb142265967"/></dir><dir name="sql"><dir name="ezloginlite_setup"><file name="mysql4-install-0.1.0.php" hash="ac7e91d988bd3766c90220f669993ae9"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><file name="ezloginlite.xml" hash="baebf1fea21538c56c12c875617725e0"/></dir><dir name="template"><dir name="ezloginlite"><file name="fblogin.phtml" hash="08fc3f4be203dca8270599812ce3dab7"/><file name="profile-image.phtml" hash="f3e42597b4c08d0a85bafcf6aa3c0926"/><file name="script.phtml" hash="b3a61925c266716d54e948ef027be95a"/></dir></dir></dir></dir></dir></target><target name="magemedia"><dir name="ezloginlite"><dir name="facebook"><file name="base_facebook.php" hash="3f2c0292e3bac49a53b6baf5b2da98ed"/><file name="facebook.php" hash="531d1f4572f8809d503519464e231570"/></dir><dir name="images"><file name="ezlogin_facebook.png" hash="81cfd67034632c656150006207b0757c"/><file name="no-image.png" hash="df63ee2f702cd16f2d274736b2f1ea56"/></dir><dir name="js"><file name="jquery-1.7.1.min.js" hash="2a410e352d5137af6e651365228eebbd"/></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php><package><name>Mage_Core_Modules</name><channel>community</channel><min>1.5</min><max>1.7.0.2</max></package></required></dependencies>
+</package>

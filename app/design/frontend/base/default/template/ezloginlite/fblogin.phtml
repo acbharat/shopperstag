@@ -1,0 +1,67 @@
+<?php 
+
+	$storeLoginImageUrl = Mage::helper('ezloginlite')->storeLoginImageUrl(); 
+
+	if(!Mage::getSingleton('customer/session')->isLoggedIn())
+	{
+		//Getting Ezlogin Block Function
+		$ezLoginLiteBlockActive =  $this->getLayout()->createBlock('ezloginlite/active');
+		
+		//Re-write Block function loading 
+		$ezLoginLiteBlockRewrite = $this->getLayout()->createBlock('ezloginlite/rewrite');
+		
+		//Re-write Block function loading for core url re-write.
+		$ezLoginLiteBlockRewrite->ezloginCoreUrlRewrite();
+	
+		$ezLoginLiteHelperData = Mage::helper('ezloginlite/data');
+		
+		//Getting Store Url.
+		$baseUrl =	$ezLoginLiteHelperData->getStoreUrl();
+		
+		//Login icon Width
+		$iconsWidth  = $ezLoginLiteHelperData->loginIconWidth();
+		
+		//Login icons Height.
+		$iconsHeight = $ezLoginLiteHelperData->loginIconHeight();
+		
+		?>
+		<div id="ez-fb-login" style="float:right!important;margin-left:5px;">
+		<?php
+			
+		if($ezLoginLiteBlockActive->facebookActive())
+		{
+			$facebookLoginUrl = $baseUrl.$ezLoginLiteBlockActive->facebookLoginUrl();
+					
+			if($ezLoginLiteHelperData->facebookAppId() && $ezLoginLiteHelperData->facebookAppSecret())
+			{
+		?>
+			<a href="<?php echo $facebookLoginUrl; ?>" onclick="javascript:void window.open('<?php echo $facebookLoginUrl; ?>','1355399625152','width=300,height=300,status=1,scrollbars=1,resizable=1,top=100,left=700');return false;">
+				<img src="<?php echo $storeLoginImageUrl.$ezLoginLiteBlockActive->facebookLoginImageUrl(); ?>" width="<?php echo $iconsWidth; ?>" height="<?php echo $iconsHeight; ?>" />
+			</a>
+		<?php	
+			}
+		}
+		?>
+		</div>
+	<?php	
+	}
+?>
+
+<?php $_links = $this->getLinks(); ?>
+<?php if(count($_links)>0): ?>
+<ul class="links"<?php if($this->getName()): ?> id="<?php echo $this->getName() ?>"<?php endif;?>>
+    <?php foreach($_links as $_link): ?>
+        <?php if ($_link instanceof Mage_Core_Block_Abstract):?>
+            <?php echo $_link->toHtml() ?>
+        <?php else: ?>
+            <li<?php if($_link->getIsFirst()||$_link->getIsLast()): ?> class="<?php if($_link->getIsFirst()): ?>first<?php endif; ?><?php if($_link->getIsLast()): ?> last<?php endif; ?>"<?php endif; ?> <?php echo $_link->getLiParams() ?>><?php echo $_link->getBeforeText() ?><a href="<?php echo $_link->getUrl() ?>" title="<?php echo $_link->getTitle() ?>" <?php echo $_link->getAParams() ?>><?php echo $_link->getLabel() ?></a><?php echo $_link->getAfterText() ?></li>
+        <?php endif;?>
+    <?php endforeach; ?>
+</ul>
+<?php endif; ?>
+
+<?php 
+	//Show EzLogin Lite Facebook Profile Image.
+	echo $this->getLayout()->createBlock('core/template')->setTemplate('ezloginlite/profile-image.phtml')->toHtml();
+?>
+

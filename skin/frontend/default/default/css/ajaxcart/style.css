@@ -1,0 +1,21 @@
+.ajaxcart-btn span{
+background: none repeat scroll 0 0 #F18200;
+    border: 1px solid #DE5400;
+    color: #FFFFFF;
+    display: block;
+    font: bold 12px/19px Arial,Helvetica,sans-serif;
+    height: 19px;
+    padding: 0 8px;
+    text-align: center;
+    white-space: nowrap;
+}
+.ajaxcart-btn span span{
+ border: 0 none;
+    padding: 0;
+}
+.ajaxcart-btn
+{
+text-decoration:none;
+cursor:pointer;
+}
+
